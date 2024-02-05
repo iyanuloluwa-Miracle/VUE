@@ -1,44 +1,28 @@
 <template>
   <div>
-    <h2 v-bind:id="headingId">Heading</h2>
-    <button v-bind:disabled="isDisabled">bind</button>
+    <h2 :id="headingId">Heading</h2>
+    <button :disabled="isDisabled">bind</button>
     <h2 class="underline">Underlined text</h2>
-    <h2 class="underline" v-bind:class="status">Status</h2>
-    <h1 v-bind:class="isPromoted && 'promoted'">Promoted Movie</h1>
-    <h2 v-bind:class="isSoldOut ? 'sold-out' : 'new'">Soldout? movie</h2>
-    <h2 v-bind:class="['new', 'promoted']">Newly promoted movie</h2>
-    <h2
-      v-bind:class="[isPromoted && 'promoted', isSoldOut ? 'sold-out' : 'new']"
-    >
+    <h2 class="underline" :class="status">Status</h2>
+    <h1 :class="{ promoted: isPromoted }">Promoted Movie</h1>
+    <h2 :class="isSoldOut ? 'sold-out' : 'new'">Soldout? movie</h2>
+    <h2 :class="['new', 'promoted']">Newly promoted movie</h2>
+    <h2 :class="[isPromoted && 'promoted', isSoldOut ? 'sold-out' : 'new']">
       Array conditional
     </h2>
-    <h2
-      v-bind:class="{
-        promoted: isPromoted,
-        new: !isSoldOut,
-        'sold-out': isSoldOut,
-      }"
-    >
+    <h2 :class="{ promoted: isPromoted, new: !isSoldOut, 'sold-out': isSoldOut }">
       Object Conditional movie
     </h2>
 
-    <h2 v-bind:style="{ 
-      color: highlightColor,
-      'font-size': headerSize + 'px',
-      padding:'20px'
-       }"
-       >inline Style
+    <h2 :style="{ color: highlightColor, 'font-size': headerSize + 'px', padding: '20px' }">
+      Inline Style
     </h2>
-    <h3 v-bind:style="headerStyleObject">Style Objects</h3>
-    <div v-bind:style="[baseStyleObject, sucessStyleObject]">
-      Success Style
-    </div>
-    <div v-bind:style="[baseStyleObject, dangerStyleObject]">
-      Danger
-    </div>
-
+    <h3 :style="headerStyleObject">Style Objects</h3>
+    <div :style="[baseStyleObject, sucessStyleObject]">Success Style</div>
+    <div :style="[baseStyleObject, dangerStyleObject]">Danger</div>
   </div>
 </template>
+
 
 <script>
 export default {
