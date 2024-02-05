@@ -2,6 +2,8 @@
   <div>
     <div>{{ greet }} {{ name }}</div>
     <div v-html="channel"></div>
+    <h2 v-bind:id="headingId">Heading</h2>
+    <button v-bind:disabled="isDisabled">bind</button>
   </div>
 </template>
 
@@ -13,7 +15,9 @@ export default {
     return{
       name:'Iyanu',
       greet:"Hello",
-      channel:'codevolution'
+      channel:'codevolution',
+      headingId:'heading',
+      isDisabled:false
     }
   }
   
