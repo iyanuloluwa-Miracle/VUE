@@ -1,15 +1,11 @@
 <template>
   <div>
-    <h2 v-for="(name,index) in names" :key="name"> {{index}} {{ name }}</h2>
-    <h2 v-for="name in fullNames" :key="name.first">{{ name.first }} {{ name.last }}</h2>
-    <div v-for="actor in actors" :key="actor.name">
-      <h2>{{ actor.name }}</h2>
-      <h3 v-for="movie in actor.movies" :key="movie">{{ movie }}</h3>
+    <div v-for="name in names" :key="name">
+      <h2 v-if="name === 'Bruce'">{{ name }}</h2>
     </div>
   </div>
-
-
 </template>
+
 
 
 <script>
@@ -18,21 +14,7 @@ export default {
   data() {
     return {
       names:['Bruce', 'Clark', 'Diana'],
-      fullNames:[
-        {first:'Dina', last:'Iyanuloluwa'},
-        {first:'Dina', last:'Anuoluwapo'},
-        {first:'Dina', last:'Miracle'}
-      ],
-      actors:[
-        {
-          name:'Christian Bale',
-          movies:['Batman','The prestige']
-        },
-        {
-          name:'Di caprio',
-          movies:['Titanic','Inception']
-        },
-      ]
+      
     };
   },
 };
