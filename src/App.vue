@@ -1,8 +1,9 @@
 <template>
   <div>
-    <div v-for="name in names" :key="name">
-      <h2 v-if="name === 'Bruce'">{{ name }}</h2>
-    </div>
+    <h2>{{  2 + 3 + 5 }}</h2>
+    <h2>{{  5 + 13 - 15 }}</h2>
+    <h2>Add method - {{ add(2,3,4,) }}</h2>
+    <h2>Add method - {{ add(10,12,13) }}</h2>
   </div>
 </template>
 
@@ -12,11 +13,14 @@
 export default {
   name: "App",
   data() {
-    return {
-      names:['Bruce', 'Clark', 'Diana'],
-      
+    return {      
     };
   },
+  methods:{
+    add(a, b, c){
+      return a + b + c
+    }
+  }
 };
 </script>
 
