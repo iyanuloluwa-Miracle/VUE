@@ -1,9 +1,17 @@
 <template>
   <div>
-    <h2>{{  2 + 3 + 5 }}</h2>
-    <h2>{{  5 + 13 - 15 }}</h2>
-    <h2>Add method - {{ add(2,3,4,) }}</h2>
-    <h2>Add method - {{ add(10,12,13) }}</h2>
+    <h2>{{name}}</h2>
+    <div>
+      <button v-on:click="name='Batman'">Change name</button>
+    </div>
+    <h2>{{ count }}</h2>
+    <div>
+      <button v-on:click="increment(1)">Increment 1</button>
+      <button v-on:click="increment(5)">Increment 5</button>
+      <button v-on:click="decrement(1)">Decrement 1</button>
+      <button v-on:click="decrement(5)">Decrement 5</button>
+
+    </div>
   </div>
 </template>
 
@@ -13,13 +21,19 @@
 export default {
   name: "App",
   data() {
-    return {      
+    return {
+      name:"Iyanu",
+      count:0     
     };
   },
   methods:{
-    add(a, b, c){
-      return a + b + c
+    increment(num){
+      this.count +=num
+    },
+    decrement(num){
+      this.count -=num
     }
+   
   }
 };
 </script>
