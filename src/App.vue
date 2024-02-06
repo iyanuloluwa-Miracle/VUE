@@ -1,26 +1,26 @@
 <template>
-  <div>
-    <h2 :id="headingId">Heading</h2>
-    <button :disabled="isDisabled">bind</button>
-    <h2 class="underline">Underlined text</h2>
-    <h2 class="underline" :class="status">Status</h2>
-    <h1 :class="{ promoted: isPromoted }">Promoted Movie</h1>
-    <h2 :class="isSoldOut ? 'sold-out' : 'new'">Soldout? movie</h2>
-    <h2 :class="['new', 'promoted']">Newly promoted movie</h2>
-    <h2 :class="[isPromoted && 'promoted', isSoldOut ? 'sold-out' : 'new']">
-      Array conditional
-    </h2>
-    <h2 :class="{ promoted: isPromoted, new: !isSoldOut, 'sold-out': isSoldOut }">
-      Object Conditional movie
-    </h2>
+<div>
+  <h2 v-if="num === 0">The number is zero</h2>
+  <h2 v-else-if="num < 0">The number is negative</h2>
+  <h2 v-else-if="num > 0">The number is positive</h2>
+  <h2 v-else>Not a number</h2>
 
-    <h2 :style="{ color: highlightColor, 'font-size': headerSize + 'px', padding: '20px' }">
-      Inline Style
-    </h2>
-    <h3 :style="headerStyleObject">Style Objects</h3>
-    <div :style="[baseStyleObject, sucessStyleObject]">Success Style</div>
-    <div :style="[baseStyleObject, dangerStyleObject]">Danger</div>
-  </div>
+  
+  <template v-if="display">
+   <h2>Iyanu</h2>
+   <h2>Codevolution</h2>
+    <h2>Vue</h2>
+
+  </template>
+
+
+  <h2 v-show="showElement">Using v-show</h2>
+
+
+  
+
+</div>
+
 </template>
 
 
@@ -29,42 +29,9 @@ export default {
   name: "App",
   data() {
     return {
-      name: "Iyanu",
-      greet: "Hello",
-      channel: "codevolution",
-      headingId: "heading",
-      isDisabled: false,
-      status: "danger",
-      isPromoted: false,
-      isSoldOut: false,
-      highlightColor: "orange",
-      headerSize:40,
-      headerStyleObject: {
-        color:'orange',
-        fontSize:'50px',
-        padding:'20px'
-
-      },
-      baseStyleObject:{
-        fontSize:'50px',
-        padding:'10px',
-        textAlign:'center',
-        
-      },
-      sucessStyleObject:{
-        color:'#800000',
-        backgroundColor:'#C71585',
-        border:'1px solid #FAFAD2',
-        textAlign:'center',
-       
-      },
-      dangerStyleObject:{
-        color:'#800000',
-        backgroundColor:'red',
-        border:'1px solid #FAFAD2',
-        textAlign:'center',
-       
-      }
+      num: -5,
+      display:true,
+      showElement: true
     };
   },
 };
