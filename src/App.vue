@@ -1,25 +1,13 @@
 <template>
-<div>
-  <h2 v-if="num === 0">The number is zero</h2>
-  <h2 v-else-if="num < 0">The number is negative</h2>
-  <h2 v-else-if="num > 0">The number is positive</h2>
-  <h2 v-else>Not a number</h2>
+  <div>
+    <h2 v-for="(name,index) in names" :key="name"> {{index}} {{ name }}</h2>
+    <h2 v-for="name in fullNames" :key="name.first">{{ name.first }} {{ name.last }}</h2>
+    <div v-for="actor in actors" :key="actor.name">
+      <h2>{{ actor.name }}</h2>
+      <h3 v-for="movie in actor.movies" :key="movie">{{ movie }}</h3>
+    </div>
+  </div>
 
-  
-  <template v-if="display">
-   <h2>Iyanu</h2>
-   <h2>Codevolution</h2>
-    <h2>Vue</h2>
-
-  </template>
-
-
-  <h2 v-show="showElement">Using v-show</h2>
-
-
-  
-
-</div>
 
 </template>
 
@@ -29,9 +17,22 @@ export default {
   name: "App",
   data() {
     return {
-      num: -5,
-      display:true,
-      showElement: true
+      names:['Bruce', 'Clark', 'Diana'],
+      fullNames:[
+        {first:'Dina', last:'Iyanuloluwa'},
+        {first:'Dina', last:'Anuoluwapo'},
+        {first:'Dina', last:'Miracle'}
+      ],
+      actors:[
+        {
+          name:'Christian Bale',
+          movies:['Batman','The prestige']
+        },
+        {
+          name:'Di caprio',
+          movies:['Titanic','Inception']
+        },
+      ]
     };
   },
 };
