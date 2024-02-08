@@ -35,6 +35,23 @@
         <option value="singapore">Singapore</option>
       </select>
     </div>
+
+    <div>
+      <input type="checkbox" id="remoteWork" v-model="formValues.remoteWork" true-value="yes" false-value="no"/>
+      <label for="remoteWork">Open to remote work</label>
+    </div>
+
+    <div>
+      <label>Skill set</label>
+      <input type="checkbox" id="html" value="html"/>
+
+      <label for="html">HTML</label>
+      <input type="checkbox" id="html" value="html" v-model="formValues.skillSet"/>
+      <label for="css">Css</label>
+      <input type="checkbox" id="css" value="css" v-model="formValues.skillSet" />
+      <label>Javascript</label>
+      <input type="checkbox" id="javascript" value="javascript" v-model="formValues.skillSet"/>
+    </div>
   </form>
  
 </template>
@@ -50,7 +67,10 @@ export default {
         name:'',
         profileSummary:'',
         country: '',
-        joblocation:[]
+        joblocation:[],
+        remoteWork:"no",
+        skillSet:[],
+        
       }
          
     };
