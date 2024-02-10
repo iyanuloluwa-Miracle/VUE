@@ -7,6 +7,10 @@
       <button @click="volume -=2">decrease</button>
     </div>
 
+    <input type="text" v-model="movie" >
+    <input type="text" v-model="movieInfo.title" >
+    <input type="text" v-model="movieInfo.actor" >
+
   </div>
  
   
@@ -17,27 +21,48 @@ export default {
   name: "App",
   data() {
     return {
-      volume: 0
+      volume: 0,
+      movie: 'Batman',
+      movieInfo: {
+        title: '',
+        actor:''
+      }
     };
   },
   methods: {},
   computed: {},
-  watch:{
-    volume(newValue, oldValue){
-      if(newValue > oldValue && newValue === 16){
-        alert('listening to a high volume for a long time may damage your hearing')
+  watch: {
+    volume(newValue, oldValue) {
+      if (newValue > oldValue && newValue === 16) {
+        alert('Listening to a high volume for a long time may damage your hearing');
       }
-
+    },
+    movie: {
+      handler(newValue) {
+        console.log(`Calling API with name=${newValue}`);
+      },
+      immediate: true,
+      //deep: true // Assuming movie is an object and you want to watch for nested changes
     }
+  },
+  movieInfo:{
+    handler(newValue){
+      console.log(
+        `Calling API with movie title = ${newValue.title} and actor = ${newValue.actor}`
+      )
+
+    },
+    deep: true
   }
 };
+
 </script>
 
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
-  color: #2c3e50;
+  color: peru;
   margin-top: 100px;
 }
 </style>
