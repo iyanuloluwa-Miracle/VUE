@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <GreetMessage></GreetMessage>
+    <GreetMessage name="Kent" heroName="Superman"/>
+    <GreetMessage name="Bruce" heroName="Batman"/>
+    <GreetMessage name="Barry Allen" heroName="The Flash"/>
+    <GreetMessage :name="name" :heroName="channel"/>
   </div>
 </template>
 
@@ -11,6 +14,12 @@ export default {
   name: "App",
   components:{
     GreetMessage
+  },
+  data(){
+    return{
+      name:"Nikki",
+      channel:'Codeevolution'
+    }
   }
 };
 </script>

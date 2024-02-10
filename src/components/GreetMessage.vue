@@ -1,12 +1,13 @@
 <template>
     <div>
-        <h2>Hello Batman</h2>
+        <h2>Hello {{ name }} a.k.a {{ heroName }}</h2>
     </div>
 </template>
 
 <script>
 export default {
-    name:'GreetMessage'
+    name:'GreetMessage',
+    props:['name', 'heroName']
 }
 </script>
 
