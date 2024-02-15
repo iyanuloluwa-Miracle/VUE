@@ -1,23 +1,33 @@
 <template>
   <div id="app">
-    <articlesComponent id="my-article" title="Article Title" :likes="50" :isPublished="true"/>
+    <button @click="showPopup = true">Show Popup</button>
+    <Popup v-show="showPopup" @close="showPopup = false"/>
   </div>
 </template>
 
 <script>
 //import GreetMessage from './components/GreetMessage.vue';
-import articlesComponent from './components/articlesComponent.vue';
+//import articlesComponent from './components/articlesComponent.vue';
+import Popup from './components/Popup.vue'
+
 
 export default {
   name: "App",
   components:{
     //GreetMessage,
-    articlesComponent
+    Popup
+
+
   },
   data(){
     return{
-      name:"Nikki",
-      channel:'Codeevolution'
+      showPopup: false
+    }
+  },
+  methods:{
+    closePopup(name){
+      this.showPopup = false
+      console.log('name',name)
     }
   }
 };
