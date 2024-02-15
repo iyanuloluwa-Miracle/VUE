@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <articlesComponent title="Article Title" :likes="50" :isPublished="true"/>
+    <articlesComponent id="my-article" title="Article Title" :likes="50" :isPublished="true"/>
   </div>
 </template>
 
