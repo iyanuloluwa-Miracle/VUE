@@ -1,19 +1,18 @@
 <template>
   <div id="app">
-    <GreetMessage name="Kent" heroName="Superman"/>
-    <GreetMessage name="Bruce" heroName="Batman"/>
-    <GreetMessage name="Barry Allen" heroName="The Flash"/>
-    <GreetMessage :name="name" :heroName="channel"/>
+    <articlesComponent title="Article Title" :likes="50" :isPublished="true"/>
   </div>
 </template>
 
 <script>
-import GreetMessage from './components/GreetMessage.vue';
+//import GreetMessage from './components/GreetMessage.vue';
+import articlesComponent from './components/articlesComponent.vue';
 
 export default {
   name: "App",
   components:{
-    GreetMessage
+    //GreetMessage,
+    articlesComponent
   },
   data(){
     return{
@@ -28,7 +27,7 @@ export default {
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
-  color: peru;
+  color: rgb(130, 184, 238);
   margin-top: 100px;
 }
 </style>
