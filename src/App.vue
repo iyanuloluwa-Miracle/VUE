@@ -1,35 +1,37 @@
 <template>
   <div id="app">
-    <button @click="showPopup = true">Show Popup</button>
-    <Popup v-show="showPopup" @close="showPopup = false"/>
+    <Card></Card>
+    <Card>Card Content</Card>
+    <Card>
+      <h2>Card Content</h2>
+    </Card>
+    <Card>
+      <img src="https://picsum.photos/200"/>
+    </Card>
+    
   </div>
 </template>
 
 <script>
-//import GreetMessage from './components/GreetMessage.vue';
-//import articlesComponent from './components/articlesComponent.vue';
-import Popup from './components/Popup.vue'
-
+import Card from './components/Card.vue';
 
 export default {
   name: "App",
   components:{
-    //GreetMessage,
-    Popup
-
-
+    Card,
+    
   },
+
+
   data(){
-    return{
-      showPopup: false
-    }
+
   },
   methods:{
-    closePopup(name){
-      this.showPopup = false
-      console.log('name',name)
-    }
+
   }
+
+  
+  
 };
 </script>
 
