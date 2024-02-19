@@ -1,30 +1,41 @@
 <template>
   <div id="app">
-    <h4>App Component Text</h4>
-    <ChildStyles>
-      <h4>Childstyles component text</h4>
-    </ChildStyles>
-     
+    <button @click="activeTab = 'TabA'">Tab A</button>
+    <button @click="activeTab = 'TabB'">Tab B</button>
+    <button @click="activeTab = 'TabC'">Tab C</button>
 
-  </div>
+
+    <component :is="activeTab" />
+
+  </div> 
 </template>
 
 <script>
 //import Card from './components/Card.vue';
 //import NameList from './components/NameList.vue';
-import ChildStyles from './components/childStyles.vue';
-
+//import ChildStyles from './components/childStyles.vue';
+import TabA from './components/TabA.vue';
+import TabB from './components/TabB.vue';
+import TabC from './components/TabC.vue';
 
 export default {
   name: "App",
   components:{
     
-    ChildStyles
+    TabA,
+    TabB,
+    TabC,
     
   },
 
 
   data(){
+    return{
+      activeTab: 'TabA',
+      
+      
+
+    }
 
   },
   methods:{
