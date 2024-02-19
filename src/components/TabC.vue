@@ -1,6 +1,7 @@
 <template>
     <div>
-        Tab C Content
+       <h3>Tab C Content</h3>
+       <input type="text" v-model="name"/> 
     </div>
 </template>
 
